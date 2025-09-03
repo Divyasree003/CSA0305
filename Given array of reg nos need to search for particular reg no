@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, key, found = 0;
+    
+    printf("Enter number of registration numbers: ");
+    scanf("%d", &n);
+
+    int reg[n];  // array to store registration numbers
+    
+    printf("Enter %d registration numbers:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &reg[i]);
+    }
+
+    printf("Enter registration number to search: ");
+    scanf("%d", &key);
+
+    // Linear search
+    for (i = 0; i < n; i++) {
+        if (reg[i] == key) {
+            printf("Registration number %d found at position %d\n", key, i + 1);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Registration number %d not found.\n", key);
+    }
+
+    return 0;
+}
